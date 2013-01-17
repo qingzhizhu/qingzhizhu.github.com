@@ -5,10 +5,10 @@
 	<meta name="google-site-verification" content="9nJDFuShU7EqBA2jMmiyC4_4uYyHadxN5cnh2dITchY" />
     <title>{{ page.title }}</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="author" content="PingMyGeek">
+    <meta name="author" content="qingzhizhu">
 <meta name="keywords" content="hacking blog tweaking programming inspiration computer science student">
 	<meta name="description" content="Personal Blog on Hacking, Programming, tweaking and experimentation.">
-<meta property="og:url" content="http://www.pingmygeek.com/">
+<meta property="og:url" content="http://www.qingzhizhu.com/">
 <meta name="title" content="Personal Blog on Computer Stuff">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -44,7 +44,7 @@
             {% assign pages_list = site.pages %}
             {% assign group = 'navigation' %}
             {% include JB/pages_list %}
-
+{{ include JB/pages_list }}
           </ul>
         </div>
       </div>
@@ -57,7 +57,7 @@
       </div>
 
       <footer>
-        <p>&copy; PingMyGeek 2012.</p> 
+        <p>&copy; qingzhizhu 2013.</p> 
         <p> Created using Jekyll.
         </p>
       </footer>
