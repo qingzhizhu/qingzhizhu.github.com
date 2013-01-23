@@ -23,29 +23,6 @@ Markdown 的目标是实现「易读易写」。
 官方英文[syntax].
 [中文语法].
 
-<!--
-###Format Text
-####Hearders
-`#` This is an `<h1>` tag
-`##` This is an `<h2>` tag
-`######` This is an `<h6>` tag
-
-####Text Styles
-\*This text will be italic\*  e.g. *斜体* 
-\_This will also be italic\_   e.g. _斜体2_
-\*\*This text will be bold\*\* e.g. **加粗**
-\_\_This will also be bold\_\_ e.g. __加粗2__
-
-\*You \*\*can\*\* combine them\* e.g. *You **can** combine them*
-
-###Lists
-####Unordered
-
-\* Item 1
-\* Item 2
-  * Item 2a
-  * Item 2b
--->
 <br/>
 
 ##工具
