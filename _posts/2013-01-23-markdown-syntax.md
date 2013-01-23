@@ -1,14 +1,12 @@
 ---
 layout: post
-title: "markdown 语法介绍"
+title: "MarkDown 语法介绍"
 description: "markdown用法. markdown syntax. markdown 语法. markdown editor. markdown 编辑器."
 category: programming
 tags: [programming, tools, markdown]
 ---
 {% include JB/setup %}
 
-MarkDown 语法介绍
-=========
 
 ##简介
 Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).
