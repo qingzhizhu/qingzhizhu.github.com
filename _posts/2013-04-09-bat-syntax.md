@@ -2,8 +2,8 @@
 layout: post
 title: "FD Error while loading initial content"
 description: "AS3 Mobile. AIR SDK. Error while loading initial content"
-category: IDE
-tags: [IDE, flash]
+category: program
+tags: [bat, other program]
 ---
 {% include JB/setup %}
 
