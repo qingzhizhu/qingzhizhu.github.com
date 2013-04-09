@@ -18,8 +18,7 @@ tags: [IDE, flash]
 
 
 如果还报错，点击project->properties 修改platform的版本号。这样就ok了。
-![Alt "修改platform"](/images/changePlatform.jpg "修改platform")
-
+<img src="/images/changePlatform.jpg" alt="修改platform">
 
 ##修改FD文件夹的摸板文件，一劳永逸
 
