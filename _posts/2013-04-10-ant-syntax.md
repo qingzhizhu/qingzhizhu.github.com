@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "FD Error while loading initial content"
-description: "AS3 Mobile. AIR SDK. Error while loading initial content"
+title: "Eclipse Ant 使用，简单语法总结"
+description: "Eclipse ant. ant. ant syntax. use ant."
 category: program
 tags: [ant, other program]
 ---
@@ -9,17 +9,19 @@ tags: [ant, other program]
 
 
 ##介绍
+<![CDATA[
 Apache Ant，是一个将软件编译、测试、部署等步骤联系在一起加以自动化的一个工具，大多用于Java环境中的软件开发。
 由Apache软件基金会所提供。默认情况下，它的buildfile(XML文件)名为build.xml。
 每一个buildfile含有一个<project>和至少一个默认的<target>，这些targets包含许多task elements。
 每一个task element有一个用来被参考的id，此id必须是唯一的。
-
+]]>
 
 ##常用命令
 
 1.ant的编译文件默认为build.xml，一般无需改变。
 2.build.xml的根节点为<project>，一般格式如下：
-   <project name="AntStudy" default="init" basedir=".">
+   <![CDATA[
+   <project name="AntStudy" default="init" basedir="."> ]]>
    name为工程名称；
    default为默认的target，就是任务；
    basedir就是基路径。一般为"."
