@@ -10,7 +10,7 @@ tags: [IDE]
 
 
 
-##转载： FB 配色方案 & FD 配色方案
+##转载： FB 配色方案 和 FD 配色方案
 [FB 配色方案] & [FD 配色方案]
 ###FlashBuilder
 通过下面的链接
@@ -25,7 +25,7 @@ http://eclipsecolorthemes.org/
 
 ##相关链接
 
-- <a href="/assets/download/desert.zip"> FD 类vim 配色方案  </a>
+- <a href="/assets/download/desert.zip"> FD 类vim 配色方案 下载文件  </a>
 
  
   [FB 配色方案]: http://blog.sina.com.cn/s/blog_a2aa45910101b1l1.html
