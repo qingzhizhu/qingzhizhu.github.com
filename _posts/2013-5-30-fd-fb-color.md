@@ -10,7 +10,8 @@ tags: [IDE]
 
 
 
-##转载： [FB 配色方案] & [FD 配色方案]
+##转载： FB 配色方案 & FD 配色方案
+[FB 配色方案] & [FD 配色方案]
 ###FlashBuilder
 通过下面的链接
 http://eclipsecolorthemes.org/ 
