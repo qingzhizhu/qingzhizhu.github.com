@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "FD & FB 配色方案"
+title: "FD 和 FB 配色方案"
 description: "flashdevelop flashbuilder 配色方案 黑色"
 category: IDE
 tags: [IDE]
