@@ -11,6 +11,7 @@ tags: [IDE]
 2. Editplus 配色方案
 
 
+<hr/>
 ##转载： FB 配色方案 和 FD 配色方案
 [FB 配色方案] & [FD 配色方案]
 ###FlashBuilder
