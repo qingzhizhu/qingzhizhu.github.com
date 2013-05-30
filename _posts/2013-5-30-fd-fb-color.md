@@ -23,13 +23,9 @@ win7 在个性化中设置。
 这个颜色会比白色柔和许多，刚开始可能你还有些不适应,但确实对我们的眼睛有好处,建议大家试一下
 RGB
 橄榄绿
-168
-182
-128
+168 182 128
 
-74
-142
-59
+74 142 59
 
 
 <hr/>
@@ -47,8 +43,8 @@ http://eclipsecolorthemes.org/
 <img src="http://junnan.org/blog/wp-content/uploads/2011/02/3553003727.png" alt="FD 类vim 配色方案" />
 
 ###相关链接
-- <a href="/assets/download/desert.zip"> FD 类vim 配色方案 下载文件  </a>
-
+- <a href="/assets/download/desert.zip"> FD 类vim 配色方案 下载文件  </a> FD
+<br/>
 
 
 <hr/>
