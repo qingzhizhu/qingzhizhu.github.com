@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "FD 和 FB 配色方案"
-description: "flashdevelop flashbuilder 配色方案 黑色"
+title: "IDE 配色方案 - 陆续更新ing"
+description: "editplus flashdevelop flashbuilder 配色方案 黑色"
 category: IDE
 tags: [IDE]
 ---
 {% include JB/setup %}
-
-
+<b>修改记录</b>
+1. FB \ FD 配色方案
+2. Editplus 配色方案
 
 
 ##转载： FB 配色方案 和 FD 配色方案
@@ -23,11 +24,19 @@ http://eclipsecolorthemes.org/
 下图中的字体用的是Consolas，如果想自己定义，在导入配色文件后，可以在Tools -> Syntax Coloring中自行调整。
 <img src="http://junnan.org/blog/wp-content/uploads/2011/02/3553003727.png" alt="FD 类vim 配色方案" />
 
-##相关链接
+###相关链接
 
 - <a href="/assets/download/desert.zip"> FD 类vim 配色方案 下载文件  </a>
+
+##转载：Editplus 配色方案
+[editplus 配色方案]
+editplus默认的配色有点太亮了，常时间看感觉刺眼。现在共享出我所使用的配色方案
+<img src="http://www.yanghengfei.com/wp-content/uploads/2011/08/20110826001020236.jpg" alt="editplus 配色方案" />
+###下载
+- <a href="/assets/download/editplus_u_color.zip"> FD 类vim 配色方案 下载文件  </a>
 
  
   [FB 配色方案]: http://blog.sina.com.cn/s/blog_a2aa45910101b1l1.html
   [FD 配色方案]: http://oldblog.junnan.org/1320
+  [editplus 配色方案]: http://www.yanghengfei.com/archives/496/
   
