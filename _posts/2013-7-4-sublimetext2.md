@@ -65,10 +65,10 @@ Sublime Text, 强大的编辑器，个人已试用，且开启了VIM 模式.现�
 
 
 ##资料
-1. [Sublime Text 网站]
-1. [从EditPlus转投Sublime Text 2]
-1. [Sublime Text VIM 模式]
-1. [Sublime Text 插件下载]
+- [Sublime Text 网站]
+- [从EditPlus转投Sublime Text 2]
+- [Sublime Text VIM 模式]
+- [Sublime Text 插件下载]
 
 ##SubLime Text 2 中文版试用
 - [download]
