@@ -18,7 +18,7 @@ Sublime Text, 强大的编辑器，个人已试用，且开启了VIM 模式.现�
     Ctrl+J 合并行（已选择需要合并的多行时）
     Ctrl+KU 改为大写
     Ctrl+KL 改为小写
-    Ctrl+D 选词 （按住-继续选择下个相同的字符串）, <font color="red">我这里测试是删除一行.</font>
+    Ctrl+D 选词 （按住-继续选择下个相同的字符串）, 我这里测试是删除一行.
     Ctrl+M 光标移动至括号内开始或结束的位置
     Ctrl+Shift+M 选择括号内的内容（按住-继续选择父括号）
     Ctrl+/ 注释整行（如已选择内容，同“Ctrl+Shift+/”效果）
@@ -60,9 +60,9 @@ Sublime Text, 强大的编辑器，个人已试用，且开启了VIM 模式.现�
 
 ###开启vim 模式
 这个开启方式在Preferences：Settings - User中添加：<br/>
-<code>
-"ignored_packages": [],
-</code>
+
+    "ignored_packages": [],
+
 
 ##资料
 1. [Sublime Text 网站]
