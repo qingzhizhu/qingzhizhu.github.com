@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Sublime Text2 强大的编辑器"
-description: "t 非常强大的文本编辑器"
+title: "Sublime Text2"
+description: "t"
 category: IDE
 tags: [IDE]
 ---
