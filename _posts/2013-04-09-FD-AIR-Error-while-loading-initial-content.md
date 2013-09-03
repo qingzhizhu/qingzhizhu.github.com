@@ -14,9 +14,9 @@ tags: [IDE, flash]
 ##单次修改
 用FD建立一个AIR Mobile项目，运行报错 Error while loading initial content。
 解决方式，修改application.xml 的命名空间。
-<pre>
-<application xmlns=”http://ns.adobe.com/air/application/3.1″>。
-</pre>
+
+
+`<application xmlns=”http://ns.adobe.com/air/application/3.1″>。`    
 
 如果还报错，点击project->properties 修改platform的版本号。这样就ok了。
 <img src="/images/changePlatform.jpg" alt="修改platform">

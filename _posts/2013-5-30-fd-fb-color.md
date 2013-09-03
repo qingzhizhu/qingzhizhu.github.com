@@ -18,7 +18,7 @@ tags: [IDE]
 ##转载： windows 保护眼睛
 
 [windows 保护眼睛]
-. 桌面-右键-属性-外观-高级-项目-窗口(记住选窗口啊）-颜色-其它，色调设为85，饱和度设为90，亮度设为205。然后单击[添加到自定义颜色]-确定...一路确定。 
+. 桌面-右键-属性-外观-高级-项目-窗口(记住选窗口啊）-颜色-其它，色调设为85，饱和度设为90，亮度设为205。然后单击 添加到自定义颜色-确定...一路确定。 
 win7 在个性化中设置。
 这个颜色会比白色柔和许多，刚开始可能你还有些不适应,但确实对我们的眼睛有好处,建议大家试一下
 RGB
@@ -43,9 +43,7 @@ http://eclipsecolorthemes.org/
 <img src="http://junnan.org/blog/wp-content/uploads/2011/02/3553003727.png" alt="FD 类vim 配色方案" />
 
 ###相关链接
-- <a href="/assets/download/desert.zip"> FD 类vim 配色方案 下载文件  </a> FD
-<br/>
-
+- <a href="/assets/download/desert.zip"> FD 类vim 配色方案 下载文件  </a>
 
 <hr/>
 ##转载：Editplus 配色方案
