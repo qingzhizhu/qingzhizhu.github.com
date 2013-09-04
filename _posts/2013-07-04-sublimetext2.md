@@ -8,7 +8,9 @@ tags: [IDE]
 {% include JB/setup %}
 
 
-Sublime Text, 强大的编辑器，个人已试用，且开启了VIM 模式.现在还在学习试用中。
+Sublime Text, 强大的编辑器，个人已试用，且开启了VIM 模式.现在还在学习试用中。<br/>
+https://sublimetext.com/
+
 
 ###快捷键
     Ctrl+L 选择整行（按住-继续选择下行）
@@ -44,6 +46,20 @@ Sublime Text, 强大的编辑器，个人已试用，且开启了VIM 模式.现�
     F2 下一个书签
     Shift+F2 上一个书签
 
+###中文乱码
+文章参考 http://www.fuzhaopeng.com/2012/sublime-text-2-with-gb2312-gbk-support/
+
+    1. 安装Sublime Package Control
+        1. Ctrl+~打开控制台，输入以下代码， 就会自动安装。
+        2. import urllib2,os; pf='Package Control.sublime-package'; 
+            ipp=sublime.installed_packages_path();<br />os.makedirs(ipp) if not os.path.exists(ipp) else None; 
+            urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); 
+            open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); 
+            print 'Please restart Sublime Text to finish installation'
+        3. [官方提供的代码](https://sublime.wbond.net/installation#st2)
+    2. Ctrl + Shift + P 打开命令行，在里面输入Install Package即可搜索需要的Package。 *输入以后可以看到下面状态条 loading.*
+    3. 一般使用“ConvertToUTF8”和“GBK Encoding Support”即可正常读取和写入CJK格式的文件了。
+    
 
 
 ###Sublime Text 2 的特色功能：
@@ -62,6 +78,10 @@ Sublime Text, 强大的编辑器，个人已试用，且开启了VIM 模式.现�
 这个开启方式在Preferences：Settings - User中添加：<br/>
 
     "ignored_packages": [],
+
+###安装插件
+
+    1. 安装Markdown Preview, 编辑md文件时，可以在浏览器中预览。
 
 
 ##资料
@@ -83,3 +103,4 @@ Sublime Text, 强大的编辑器，个人已试用，且开启了VIM 模式.现�
 [Sublime Text VIM 模式]:http://www.cnblogs.com/leohxj/archive/2012/05/23/2514956.html
 [Sublime Text 插件下载]:http://wbond.net/sublime_packages
 [download]:http://pan.baidu.com/share/link?shareid=3722064749&uk=2686104131
+[官方提供的代码]:https://sublime.wbond.net/installation#st2
