@@ -51,11 +51,7 @@ https://sublimetext.com/
 
     1. 安装Sublime Package Control
         1. Ctrl+~打开控制台，输入以下代码， 就会自动安装。
-        2. import urllib2,os; pf='Package Control.sublime-package'; 
-            ipp=sublime.installed_packages_path();<br />os.makedirs(ipp) if not os.path.exists(ipp) else None; 
-            urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); 
-            open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); 
-            print 'Please restart Sublime Text to finish installation'
+        2. import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation')
         3. [官方提供的代码](https://sublime.wbond.net/installation#st2)
     2. Ctrl + Shift + P 打开命令行，在里面输入Install Package即可搜索需要的Package。 *输入以后可以看到下面状态条 loading.*
     3. 一般使用“ConvertToUTF8”和“GBK Encoding Support”即可正常读取和写入CJK格式的文件了。
