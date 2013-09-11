@@ -43,3 +43,8 @@ tags: [cpp]
 	int ival(1024);		//direct-initialization
 	int ival = 1024; 	//copy-initialization 
 	```
+- 建议每个内置类型的对象都要初始化，习惯问题。
+
+
+
+
