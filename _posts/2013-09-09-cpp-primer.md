@@ -34,6 +34,7 @@ tags: [cpp]
 	<<std::endl;
 	return 0;
 	```
+- 用 `class` 和 `struct` 定义类的唯一区别在于默认访问级别，默认情况下，struct的成员为public, class 的成员为private. 
 
 ##小心坑
 - C++ 中，把负值赋给unsigned是合法的其结果是该负数对该类型的取值个数求模后的值，如-1赋给8位的unsigned char，结果是255.
@@ -44,7 +45,12 @@ tags: [cpp]
 	int ival = 1024; 	//copy-initialization 
 	```
 - 建议每个内置类型的对象都要初始化，习惯问题。
-
+- 定义类记得最后面的分号！！！
+- 因为头文件在多个源文件中，所以不应该含有变量或函数的定义。 下面2个都是定义
+	```
+	extern int ival = 10; // initializer, so it's a definition
+	double fica_rate;	//no extern, so it's a definition
+	```
 
 
 
