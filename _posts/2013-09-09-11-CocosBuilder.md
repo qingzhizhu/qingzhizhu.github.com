@@ -9,6 +9,11 @@ tags: [cpp]
 
 用cocosbuilder 做见面遇到了很多问题,其中问题很诡异，感觉是项目的设置有问题，在此记录一下。
 
+测试环境：
+- Xcode 4.6.2
+- cocos2d-x 2.1.5
+- CocosBuilder 3.0-alpha5
+
 ##参考文章 
 [喜气洋洋的一步一步cocosbuilder](http://young40.github.io/blog/2012/12/21/cocosbuilder-step-by-step-part-one/)
 文章4篇写的很详细，我在众多的参考文章里，觉得这个是最好的。
@@ -25,6 +30,13 @@ tags: [cpp]
 - 文件有残留，即使将他清理到废纸桶。在XCode里选择windows-organizer-protect-delete，清楚虚拟机设备的数据
 - 添加一个新的ccb，需要在Xcode理重新联盟资源
 - 最好做的时候结合Xcode运行看看到底对不对，否则不对以后又要重新制作，我就在锚点上弄错了，导致很多的元件位置都飞了。
+
+###结合TexturePacker
+
+- texture 发布在Xcode项目的resource的ccbResources 中
+- 新建的CCB 链接Xcode的ccbResources 中,在`File 的 Project Setting `链接
+- CCB发布路径在Xcode项目的resource的ccbi文件夹中
+- CCB发布选择 `Only publish ccb-files` 和 `Flatten paths when publish`.	
 
 
 ##命名 
