@@ -30,6 +30,7 @@ tags: [cpp]
 - 文件有残留，即使将他清理到废纸桶。在XCode里选择windows-organizer-protect-delete，清楚虚拟机设备的数据
 - 添加一个新的ccb，需要在Xcode理重新联盟资源
 - 最好做的时候结合Xcode运行看看到底对不对，否则不对以后又要重新制作，我就在锚点上弄错了，导致很多的元件位置都飞了。
+- 建立单独的ccb，如Item，单独元件，要设置最外层CCLayer的具体尺寸。不要用100%。
 
 ###结合TexturePacker
 
