@@ -60,16 +60,16 @@ tags: [cpp]
 ```Cpp
 	#ifndef __BattleAlertUI__HeadLayer__
 	#define __BattleAlertUI__HeadLayer__
-
+<br/>
 	#include "cocos2d.h"
 	#include "cocos-ext.h"
-
+<br/>
 	class HeadLayer
 	{
 	public:
 	    static cocos2d::CCScene* scene();
 	};
-
+<br/>
 	#endif /* defined(__BattleAlertUI__HeadLayer__) */
 ```
 
@@ -77,27 +77,27 @@ c++文件
 
 ```Cpp
 	#include "HeadLayer.h"
-
+<br/>
 	USING_NS_CC;
 	USING_NS_CC_EXT;
-
+<br/>
 	CCScene* HeadLayer::scene()
 	{
 	    CCScene *scene = CCScene::create();
-	    
+<br/>	    
 	    CCNodeLoaderLibrary *lib = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary(); //生成一个默认的Node Loader
-	    
+<br/>	    
 	    CCBReader *reader = new CCBReader(lib); //用node load lib 初始化一个ccb reader
-	    
+<br/>	    
 	    CCNode *node = reader->readNodeGraphFromFile("gui.ccbi", scene); //从ccbi文件中加载node
-	    
+<br/>	    
 	    reader->release(); //注意手动释放内存
-	    
+<br/>	    
 	    if (node!=NULL)
 	    {
 	        scene->addChild(node); //将node 添加到scene中
 	    }
-	    
+<br/>	    
 	    return scene;
 	}
 ```
@@ -117,9 +117,11 @@ c++文件
 	protected:
 	    CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(HeadLayer);
 	};
-	```
-	- 然后我们在HeadLayer.cpp中添加一行注册将ccb文件和类绑定起来.
-	```cpp
+```
+
+- 然后我们在HeadLayer.cpp中添加一行注册将ccb文件和类绑定起来.
+
+```cpp
 	lib->registerCCNodeLoader("HeadLayer", HeadLayerLoader::loader());
 ```
 
@@ -128,9 +130,11 @@ c++文件
 ###控件和变量的绑定
 
 -变量类型有三种
+
 	- Don`t assign:不分配
 	- Doc root var:从属于根对象所属类型
 	- Owner var:从属于指定类型
+	
 - 我们先在CCB中给CCLabelTTF添加一个Doc root var类型的绑定lbl. 添加一个叫lbl_coin.
 - 然后在Xcode中给HeadLayer.h增加一个从CCBMemberVariableAssigner的继承并实现其虚函数. 并且添加相应的变量. 
 
@@ -143,30 +147,31 @@ c++文件
 	    HeadLayer();
 	    ~HeadLayer();
 	    static cocos2d::CCScene* scene();
-	    
+<br/>	    
 	    CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(HeadLayer, create);
-
+<br/>
 	    virtual bool onAssignCCBMemberVariable(cocos2d::CCObject* pTarget, const char* pMemberVariableName, cocos2d::CCNode* pNode);
 	private:
 	    cocos2d::CCLabelTTF *mLbl;
 	    cocos2d::CCLabelTTF *mLblCoin;
-
+<br/>
 	};
 ```
 
 - 在HeadLayer.cpp 添加
 需要注意的是, 由于绑定较晚, 所以无法在init函数中使用变量mLbl.
+
 ```cpp
 	HeadLayer::HeadLayer()//构造函数
 	: mLbl(NULL), mLblCoin(NULL)
 	{}
-
+<br/>
 	HeadLayer::~HeadLayer()
 	{
 	    CC_SAFE_DELETE(mLbl);
 	    CC_SAFE_DELETE(mLblCoin);
 	}
-
+<br/>
 	bool HeadLayer::onAssignCCBMemberVariable(cocos2d::CCObject *pTarget, const char *pMemberVariableName, cocos2d::CCNode *pNode)
 	{
 	    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "lbl", CCLabelTTF*, this->mLbl);
@@ -185,33 +190,35 @@ c++文件
 	{
 	    this->mLbl->setString("Hello 我！");
 	}
-
 ```
 
 
 ###事件和函数的绑定
 - HeadLyaer.h 继承 `, public cocos2d::extension::CCBSelectorResolver`
 - 显示虚方法:
+
 ```cpp
 	virtual cocos2d::SEL_MenuHandler onResolveCCBCCMenuItemSelector(cocos2d::CCObject * pTarget, const char* pSelectorName);
 	virtual cocos2d::extension::SEL_CCControlHandler onResolveCCBCCControlSelector(cocos2d::CCObject * pTarget, const char* pSelectorName);
-
+<br/>
 	void onButtonTest(cocos2d::CCObject *pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
 ```
+
 - HeadLayer.cpp 实现方法
+
 ```cpp
 	SEL_MenuHandler HeadLayer::onResolveCCBCCMenuItemSelector(cocos2d::CCObject *pTarget, const char *pSelectorName)
 	{
 	    return NULL;
 	}
-
+<br/>
 	SEL_CCControlHandler HeadLayer::onResolveCCBCCControlSelector(cocos2d::CCObject *pTarget, const char *pSelectorName)
 	{
 	    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onButtonTest", HeadLayer::onButtonTest);
-	    
+<br/>	    
 	    return NULL;
 	}
-
+<br/>
 	void HeadLayer::onButtonTest(cocos2d::CCObject *pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
 	{
 	    this->mLbl->setString("Hello CocosBuilder!!!");
