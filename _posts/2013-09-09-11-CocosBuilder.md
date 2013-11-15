@@ -60,16 +60,16 @@ tags: [cpp]
 ```Cpp
 	#ifndef __BattleAlertUI__HeadLayer__
 	#define __BattleAlertUI__HeadLayer__
-<br/>
+//换行问题
 	#include "cocos2d.h"
 	#include "cocos-ext.h"
-<br/>
+//换行问题
 	class HeadLayer
 	{
 	public:
 	    static cocos2d::CCScene* scene();
 	};
-<br/>
+//换行问题
 	#endif /* defined(__BattleAlertUI__HeadLayer__) */
 ```
 
@@ -77,27 +77,27 @@ c++文件
 
 ```Cpp
 	#include "HeadLayer.h"
-<br/>
+//换行问题
 	USING_NS_CC;
 	USING_NS_CC_EXT;
-<br/>
+//换行问题
 	CCScene* HeadLayer::scene()
 	{
 	    CCScene *scene = CCScene::create();
-<br/>	    
+//换行问题	    
 	    CCNodeLoaderLibrary *lib = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary(); //生成一个默认的Node Loader
-<br/>	    
+//换行问题	    
 	    CCBReader *reader = new CCBReader(lib); //用node load lib 初始化一个ccb reader
-<br/>	    
+//换行问题	    
 	    CCNode *node = reader->readNodeGraphFromFile("gui.ccbi", scene); //从ccbi文件中加载node
-<br/>	    
+//换行问题	    
 	    reader->release(); //注意手动释放内存
-<br/>	    
+//换行问题	    
 	    if (node!=NULL)
 	    {
 	        scene->addChild(node); //将node 添加到scene中
 	    }
-<br/>	    
+//换行问题	    
 	    return scene;
 	}
 ```
@@ -147,14 +147,14 @@ c++文件
 	    HeadLayer();
 	    ~HeadLayer();
 	    static cocos2d::CCScene* scene();
-<br/>	    
+//换行问题	    
 	    CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(HeadLayer, create);
-<br/>
+//换行问题
 	    virtual bool onAssignCCBMemberVariable(cocos2d::CCObject* pTarget, const char* pMemberVariableName, cocos2d::CCNode* pNode);
 	private:
 	    cocos2d::CCLabelTTF *mLbl;
 	    cocos2d::CCLabelTTF *mLblCoin;
-<br/>
+//换行问题
 	};
 ```
 
@@ -165,13 +165,13 @@ c++文件
 	HeadLayer::HeadLayer()//构造函数
 	: mLbl(NULL), mLblCoin(NULL)
 	{}
-<br/>
+//换行问题
 	HeadLayer::~HeadLayer()
 	{
 	    CC_SAFE_DELETE(mLbl);
 	    CC_SAFE_DELETE(mLblCoin);
 	}
-<br/>
+//换行问题
 	bool HeadLayer::onAssignCCBMemberVariable(cocos2d::CCObject *pTarget, const char *pMemberVariableName, cocos2d::CCNode *pNode)
 	{
 	    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "lbl", CCLabelTTF*, this->mLbl);
@@ -200,7 +200,7 @@ c++文件
 ```cpp
 	virtual cocos2d::SEL_MenuHandler onResolveCCBCCMenuItemSelector(cocos2d::CCObject * pTarget, const char* pSelectorName);
 	virtual cocos2d::extension::SEL_CCControlHandler onResolveCCBCCControlSelector(cocos2d::CCObject * pTarget, const char* pSelectorName);
-<br/>
+//换行问题
 	void onButtonTest(cocos2d::CCObject *pSender, cocos2d::extension::CCControlEvent pCCControlEvent);
 ```
 
@@ -211,14 +211,14 @@ c++文件
 	{
 	    return NULL;
 	}
-<br/>
+//换行问题
 	SEL_CCControlHandler HeadLayer::onResolveCCBCCControlSelector(cocos2d::CCObject *pTarget, const char *pSelectorName)
 	{
 	    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onButtonTest", HeadLayer::onButtonTest);
-<br/>	    
+//换行问题	    
 	    return NULL;
 	}
-<br/>
+//换行问题
 	void HeadLayer::onButtonTest(cocos2d::CCObject *pSender, cocos2d::extension::CCControlEvent pCCControlEvent)
 	{
 	    this->mLbl->setString("Hello CocosBuilder!!!");
