@@ -18,7 +18,7 @@ tags: [cpp]
 - 头文件后缀 `.h \ .hpp \ .hxx` 。 使得类或其他名字的定义在多个程序中可用的一种机制，通过 `#include` 包含。
 - `<<` 输出操作符
 - `>>` 输入操作符, 别搞反了！
-- `endl` 操纵符 (manipulator) 
+- `endl` 操纵符 (manipulator) 将它写入输出流时，具有输出换行的效果，并刷新与设备相关的缓冲区（buffer），立即看到写入到流中的输出，必须写！
 - `::` 作用域操作符(scope oprator) 
 - `()` 调用操作符 (operate)
 - `{}` 块 block, (curly brace)
