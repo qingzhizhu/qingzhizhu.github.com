@@ -38,7 +38,7 @@ target 是mc，且注册点在- 40， -30；
 	trace(bounds);    //-40，-30 ...
 	var bmpData:BitmapData = new BitmapData(Math.floor(bounds.width), Math.floor(bounds.height), true, 0);
 	var bmpMatrix:Matrix = target.transform.matrix;
-	bmpMatrix.translate(-bounds.x, -bounds.y);    要以过来才行
+	bmpMatrix.translate(-bounds.x, -bounds.y);    要移过来才行
 	trace(bmpMatrix);
 	 
 	bmpData.draw(target, bmpMatrix);
