@@ -3,7 +3,7 @@ layout: post
 title: "flash 位图优化"
 description: "bitmap, bitmapdata "
 category: flash
-tags: [as3, basic]
+tags: [as3, optimize]
 ---
 {% include JB/setup %}
 
