@@ -18,74 +18,75 @@ Apache Ant，是一个将软件编译、测试、部署等步骤联系在一起�
 
 ##常用命令
 
-1.ant的编译文件默认为build.xml，一般无需改变。<br/>
+1.ant的编译文件默认为build.xml，一般无需改变。
+
 2.build.xml的根节点为`<project>`，一般格式如下：   
 
-`<project name="AntStudy" default="init" basedir=".">` <br/>
+    <project name="AntStudy" default="init" basedir=".">
+    name为工程名称；
+    default为默认的target，就是任务；
+    basedir就是基路径。一般为"."
 
-   name为工程名称；<br/>
-   default为默认的target，就是任务；<br/>
-   basedir就是基路径。一般为"."<br/>
+3.property可以定义变量，一般格式如下：
 
-3.property可以定义变量，一般格式如下：<br/>
+    <property name="test" value="shit" />
+    引用的时候这么引用`${test}`
+    如果变量是路径的话，则可以这么定义：
+    `<property name="src" value="src" />`
+    这么定义就可以不用担心"\"和"/"的问题了。
 
-`<property name="test" value="shit" />` <br/>
+4.定义target：
 
-   引用的时候这么引用`${test}` <br/>
-   如果变量是路径的话，则可以这么定义：<br/>
-   `<property name="src" value="src" />`<br/>
-   这么定义就可以不用担心"\"和"/"的问题了。
+    <target name="compile" depends="init"><!--other command--></target>
+    name的值为target的名称，可以在编译的时候指定是完成哪个target，
+    否则采用project那里定义的default。
+    depends则定义了依赖关系，值为其他target的name。多个依赖关系用","隔开，
+    顺序执行完定义的依赖关系，才会执行这个target。
+    target在build.xml中定义的顺序无所谓，但是depends中的顺序必须正确。
 
-4.定义target：<br/>
-:   `<target name="compile" depends="init"><!--other command--></target>`<br/>
-   name的值为target的名称，可以在编译的时候指定是完成哪个target，<br/>
-   否则采用project那里定义的default。<br/>
-   depends则定义了依赖关系，值为其他target的name。多个依赖关系用","隔开，<br/>
-   顺序执行完定义的依赖关系，才会执行这个target。<br/>
-   target在build.xml中定义的顺序无所谓，但是depends中的顺序必须正确。<br/>
+5.编译源代码：
 
-5.编译源代码：<br/>
-
-  `<javac srcdir="src" destdir="classes">
+    <javac srcdir="src" destdir="classes">
      <classpath> 
-             <fileset dir="lib"> 
-                 <include name="**/*.jar"/> 
-             </fileset>
-         </classpath> 
-   </javac>`
+     	<fileset dir="lib"> 
+     		<include name="**/*.jar"/> 
+     	</fileset>
+     </classpath> 
+    </javac>
 
-   这个标签自动寻找src中以.java为扩展名的文件，并且调用javac命令。<br/>
-   这个任务有个特点，它仅仅编译那些需要编译的源文件。如果没有更新，就不需要编译，
-   速度就加快。
-   编译文件和ant使用的同一个jvm，大大减少资源浪费。
-   还可以指定classpath。classpath中指定文件夹，然后指定包含的文件的规则。
+这个标签自动寻找src中以.java为扩展名的文件，并且调用javac命令。<br/>
+这个任务有个特点，它仅仅编译那些需要编译的源文件。如果没有更新，就不需要编译，
+速度就加快。
+编译文件和ant使用的同一个jvm，大大减少资源浪费。
+还可以指定classpath。classpath中指定文件夹，然后指定包含的文件的规则。
 
-6.创建jar文件：<br/>
+6.创建jar文件：
 
-  `<jar destfile="antstudy.jar" basedir="classes">
-    <manifest>
-       <attribute name="Main-Class" value="bean.ant.TestAnt" />
-    </manifest>
-   </jar>`
+    <jar destfile="antstudy.jar" basedir="classes">
+	    <manifest>
+	       <attribute name="Main-Class" value="bean.ant.TestAnt" />
+	    </manifest>
+    </jar>
 
-   manifest指定manifest中文件的属性，比如可以指定Main-Class<br/>
+   **manifest指定manifest中文件的属性，比如可以指定Main-Class**
 
 7.创建目录：
 
-`<mkdir dir="classes" />`<br/>
+`<mkdir dir="classes" />`
 
    创建dir的文件夹。
 
 8.删除目录：
 
-  `<delete dir="classes" />`<br/>
+  `<delete dir="classes" />`
 
    删除classes文件夹
 
 9.拷贝文件：
-  `<copy todir="${backup.dir}"> 
-        <fileset dir="${classes.dir}"/> 
-    </copy>`
+
+    <copy todir="${backup.dir}"> 
+    	<fileset dir="${classes.dir}"/> 
+    </copy>
 
     把fileset文件夹下面的所有文件拷贝到 backup.dir
 
@@ -93,22 +94,22 @@ Apache Ant，是一个将软件编译、测试、部署等步骤联系在一起�
   
   `<java dir="${build}" classname="bean.ant.TestAnt" fork="true" />`<br/>
 
-    dir为工作文件夹，classname为类名。fork要设置为true。因为你编译放class的文件夹
-    正在使用，所以要新打开一个虚拟机。
+dir为工作文件夹，classname为类名。fork要设置为true。因为你编译放class的文件夹
+正在使用，所以要新打开一个虚拟机。
 
 11.生成javadoc：
   
-  `<javadoc sourcepath="${src}" destdir="${docs}/javadoc" encoding="utf-8" charset="utf-8" 
-windowtitle="Spring Framework" source="1.5" access="package" author="true" version="true" 
-use="true" defaultexcludes="true">
-<doctitle>
-   <![CDATA[<h1>Ant Test</h1>]]></doctitle>
-<bottom>
-   <![CDATA[<i>Copyright (c) 2002-2007</i>]]></bottom>
-<packageset dir="${src}">
-   <include name="bean/ant/**" />
-</packageset>
-</javadoc>` <br/>
+    <javadoc sourcepath="${src}" destdir="${docs}/javadoc" encoding="utf-8" charset="utf-8" windowtitle="Spring Framework" source="1.5" access="package" author="true" version="true" use="true" defaultexcludes="true">
+	    <doctitle>
+		    <![CDATA[<h1>Ant Test</h1>]]>
+		</doctitle>
+	    <bottom>
+	    	<![CDATA[<i>Copyright (c) 2002-2007</i>]]>
+		</bottom>
+	    <packageset dir="${src}">
+	    	<include name="bean/ant/**" />
+	    </packageset>
+    </javadoc>
 
 
 `encoding="utf-8" charset="utf-8"` 都需要，否则javadoc是乱码。<br/>
@@ -116,35 +117,35 @@ packageset一定要设定，否则找不到源码，格式可以是`**`.意思�
 
 12.path的使用，可以定义path对象，在其他地方可以直接复用。
 
-  `<path id="1"> 
-   <pathelement location="."/> 
-   <pathelement location="./lib/junit.jar"/> 
-</path>
-<path id="2"> 
-   <fileset dir="lib"> 
-   <include name="**/*.jar"/> 
-   </fileset> 
-</path>
-<javac srcdir="./src" destdir="./classes"> 
-   <classpath refid="1"/> 
-</javac>
-<javac srcdir="./src" destdir="./classes"> 
-      <classpath refid="1"> 
-          <pathelement location="."/> 
-          <pathelement location="./lib/junit.jar"/> 
-      </classpath> 
-</javac>`
+    <path id="1"> 
+	    <pathelement location="."/> 
+	    <pathelement location="./lib/junit.jar"/> 
+    </path>
+    <path id="2"> 
+	    <fileset dir="lib"> 
+	    	<include name="**/*.jar"/> 
+	    </fileset> 
+    </path>
+    <javac srcdir="./src" destdir="./classes"> 
+    	<classpath refid="1"/> 
+    </javac>
+    <javac srcdir="./src" destdir="./classes"> 
+    	<classpath refid="1"> 
+		    <pathelement location="."/> 
+		    <pathelement location="./lib/junit.jar"/> 
+	    </classpath> 
+    </javac>
 
 13.单元测试：
 
-  `<junit printsummary="yes">
-   <classpath refid="testpath" />
-   <batchtest>
-    <fileset dir="${test}">
-     <include name="**/*Test.java" />
-    </fileset>
-   </batchtest>
-</junit>` <br/>
+    <junit printsummary="yes">
+    	<classpath refid="testpath" />
+	    <batchtest>
+		    <fileset dir="${test}">
+		    	<include name="**/*Test.java" />
+		    </fileset>
+	    </batchtest>
+    </junit>
 
     batchtest为批量test，需要设置符合条件的类名称。<br/>
     在进行单元测试之前必须先进行编译。<br/>
