@@ -22,7 +22,8 @@ Apache Ant，是一个将软件编译、测试、部署等步骤联系在一起�
 
 2.build.xml的根节点为`<project>`，一般格式如下：   
 
-    <project name="AntStudy" default="init" basedir=".">
+    `<project name="AntStudy" default="init" basedir=".">`
+
     name为工程名称；
     default为默认的target，就是任务；
     basedir就是基路径。一般为"."
@@ -48,9 +49,9 @@ Apache Ant，是一个将软件编译、测试、部署等步骤联系在一起�
 
     <javac srcdir="src" destdir="classes">
      <classpath> 
-     	<fileset dir="lib"> 
-     		<include name="**/*.jar"/> 
-     	</fileset>
+      <fileset dir="lib"> 
+        <include name="**/*.jar"/> 
+      </fileset>
      </classpath> 
     </javac>
 
@@ -60,15 +61,18 @@ Apache Ant，是一个将软件编译、测试、部署等步骤联系在一起�
 编译文件和ant使用的同一个jvm，大大减少资源浪费。
 还可以指定classpath。classpath中指定文件夹，然后指定包含的文件的规则。
 
+
+
 6.创建jar文件：
 
     <jar destfile="antstudy.jar" basedir="classes">
-	    <manifest>
-	       <attribute name="Main-Class" value="bean.ant.TestAnt" />
-	    </manifest>
+      <manifest>
+         <attribute name="Main-Class" value="bean.ant.TestAnt" />
+      </manifest>
     </jar>
 
    **manifest指定manifest中文件的属性，比如可以指定Main-Class**
+
 
 7.创建目录：
 
@@ -82,10 +86,11 @@ Apache Ant，是一个将软件编译、测试、部署等步骤联系在一起�
 
    删除classes文件夹
 
+
 9.拷贝文件：
 
     <copy todir="${backup.dir}"> 
-    	<fileset dir="${classes.dir}"/> 
+      <fileset dir="${classes.dir}"/> 
     </copy>
 
     把fileset文件夹下面的所有文件拷贝到 backup.dir
@@ -97,54 +102,57 @@ Apache Ant，是一个将软件编译、测试、部署等步骤联系在一起�
 dir为工作文件夹，classname为类名。fork要设置为true。因为你编译放class的文件夹
 正在使用，所以要新打开一个虚拟机。
 
+
 11.生成javadoc：
   
     <javadoc sourcepath="${src}" destdir="${docs}/javadoc" encoding="utf-8" charset="utf-8" windowtitle="Spring Framework" source="1.5" access="package" author="true" version="true" use="true" defaultexcludes="true">
-	    <doctitle>
-		    <![CDATA[<h1>Ant Test</h1>]]>
-		</doctitle>
-	    <bottom>
-	    	<![CDATA[<i>Copyright (c) 2002-2007</i>]]>
-		</bottom>
-	    <packageset dir="${src}">
-	    	<include name="bean/ant/**" />
-	    </packageset>
+      <doctitle>
+        <h1>Ant Test</h1>
+    </doctitle>
+      <bottom>
+        <i>Copyright (c) 2002-2007</i>
+    </bottom>
+      <packageset dir="${src}">
+        <include name="bean/ant/**" />
+      </packageset>
     </javadoc>
 
 
 `encoding="utf-8" charset="utf-8"` 都需要，否则javadoc是乱码。<br/>
 packageset一定要设定，否则找不到源码，格式可以是`**`.意思是所有源码。<br/>
 
+
+
 12.path的使用，可以定义path对象，在其他地方可以直接复用。
 
     <path id="1"> 
-	    <pathelement location="."/> 
-	    <pathelement location="./lib/junit.jar"/> 
+      <pathelement location="."/> 
+      <pathelement location="./lib/junit.jar"/> 
     </path>
     <path id="2"> 
-	    <fileset dir="lib"> 
-	    	<include name="**/*.jar"/> 
-	    </fileset> 
+      <fileset dir="lib"> 
+        <include name="**/*.jar"/> 
+      </fileset> 
     </path>
     <javac srcdir="./src" destdir="./classes"> 
-    	<classpath refid="1"/> 
+      <classpath refid="1"/> 
     </javac>
     <javac srcdir="./src" destdir="./classes"> 
-    	<classpath refid="1"> 
-		    <pathelement location="."/> 
-		    <pathelement location="./lib/junit.jar"/> 
-	    </classpath> 
+      <classpath refid="1"> 
+        <pathelement location="."/> 
+        <pathelement location="./lib/junit.jar"/> 
+      </classpath> 
     </javac>
 
 13.单元测试：
 
     <junit printsummary="yes">
-    	<classpath refid="testpath" />
-	    <batchtest>
-		    <fileset dir="${test}">
-		    	<include name="**/*Test.java" />
-		    </fileset>
-	    </batchtest>
+      <classpath refid="testpath" />
+      <batchtest>
+        <fileset dir="${test}">
+          <include name="**/*Test.java" />
+        </fileset>
+      </batchtest>
     </junit>
 
     batchtest为批量test，需要设置符合条件的类名称。<br/>
@@ -153,6 +161,7 @@ packageset一定要设定，否则找不到源码，格式可以是`**`.意思�
     一开始会报一个找不到junit的错误，可以用下面方法解决：<br/>
     Windows>>Preference>>Ant>>Runtime>>Classpath<br/>
     添加一个junit.jar 在 eclipse home\plugins\org.junit_3.8.1可以找到。<br/>
+
 
 ##相关链接
 
