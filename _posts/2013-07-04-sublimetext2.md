@@ -78,6 +78,15 @@ https://sublimetext.com/
 ###安装插件
 
     1. 安装Markdown Preview, 编辑md文件时，可以在浏览器中预览。
+    
+###设置字体
+
+Changing the font can be done via adding these lines to Preferences/Settings - User:
+
+	"font_face": "Courier New",
+	"font_size": 10
+and then change as desired. The font will change when you save.
+
 
 
 ##资料
@@ -85,6 +94,7 @@ https://sublimetext.com/
 - [从EditPlus转投Sublime Text 2]
 - [Sublime Text VIM 模式]
 - [Sublime Text 插件下载]
+- [设置字体]
 
 ##SubLime Text 2 中文版试用
 - [download]
@@ -100,3 +110,4 @@ https://sublimetext.com/
 [Sublime Text 插件下载]:http://wbond.net/sublime_packages
 [download]:http://pan.baidu.com/share/link?shareid=3722064749&uk=2686104131
 [官方提供的代码]:https://sublime.wbond.net/installation#st2
+[设置字体]:http://www.sublimetext.com/docs/2/font.html
