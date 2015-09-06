@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta charset="utf-8">
+<title>(●—●)拍大白赢福利！大白周边等你拿！</title>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes"/>
+<meta name="screen-orientation" content="portrait"/>
+<meta name="x5-fullscreen" content="true"/>
+<meta name="360-fullscreen" content="true"/>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/e650f665fb82415f55f73582ebc_p1_mk1.js"></script>
+</head>
+<body>
+	<div id="container" class="splash">
+		<canvas id="canvas"><span>Browser does not support the canvas.</span></canvas>
+		<div id="info"></div>
+	</div>
+	<div id="preload"></div>
+    <script src="js/fe89db28bfd2ba5394663248eb2_p1_mk1.js"></script>
+	<script language=javascript>
+		var mebtnopenurl = 'http://mp.weixin.qq.com/s?__biz=MzA5NjQ0NjY2Nw==&mid=207633722&idx=1&sn=275ede0b02c52e095628e0bb355898eb#rd';
+		var thegameurl ="http://qingzhizhu.github.io/demo/dabai/index.html"; 
+		var guanzhuurl ="http://mp.weixin.qq.com/s?__biz=MzA5NjQ0NjY2Nw==&mid=207633722&idx=1&sn=275ede0b02c52e095628e0bb355898eb#rd";
+		window.shareData = {
+		        "imgUrl": "http://qingzhizhu.github.io/demo/dabai/images/dabai1.jpeg",
+		        "timeLineLink": thegameurl,
+		        "tTitle": "Hi,Baymax~~",
+		        "tContent": "给大白拍照，分享到朋友圈"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			 if((window.location+"").indexOf("f=zf",1)>0){
+			 	window.location = mebtnopenurl;
+			  }
+			  else{
+			 	goHome();
+			  }
+		}
+		function dp_share(){
+			document.getElementById("share").style.display="";
+			
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width="100%" src="images/5496c84ac62f4370af3f1162da7_p1_mk1.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "ksiphone6" };
+			function dp_submitScore(score){
+				myData.score =parseInt(score*100);
+				myData.scoreName = "拍了"+score+"分";
+
+
+
+
+
+				
+				document.title ="(●—●)我拍大白得了"+score+"分，分数越高送大白！";			
+				window.shareData.tTitle = document.title;
+				
+			}
+			
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("？")) {
+                            window.location = mebtnopenurl;
+                        }
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+				else {
+		        	document.location.href = guanzhuurl ;
+				}
+	        }
+			</script>
+
+</body>
+</html>
